@@ -12,6 +12,6 @@ jobs:
         uses: JRubics/poetry-publish@v1.11
         with:
           pypi_token: ${{ secrets.PYPI_TOKEN }}
-          extra_build_dependency_packages: "liblapack-dev"
+          extra_build_dependency_packages: "liblapack-dev gfortran"
           repository_name: "testpypi"
           repository_url: "https://test.pypi.org/legacy/"

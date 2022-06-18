@@ -19,3 +19,10 @@ jobs:
         WITH_V: true
         RELEASE_BRANCHES: release.*,feature.*,fix.*,hotfix.*,main
         INITIAL_VERSION: 0.1.0
+    - name: Build and publish to pypi
+      uses: JRubics/poetry-publish@v1.11
+      with:
+        pypi_token: ${{ secrets.PYPI_TOKEN }}
+        extra_build_dependency_packages: "liblapack-dev gfortran"
+        repository_name: "testpypi"
+        repository_url: "https://test.pypi.org/legacy/"
