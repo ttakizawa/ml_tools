@@ -1,0 +1,43 @@
+[project]
+name = "ml_tools"
+description = ""
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+keywords = ["ml", "data-science", "pandas", "numpy", "feature-engineering"]
+authors = [
+  {email = "zawa78@gmail.com"},
+  {name = "Takafumi Takizawa"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["version"]
+
+[tool.poetry]
+name = "ml_tools"
+version = "0.0.1"
+description = ""
+authors = ["Takafumi Takizawa <zawa78@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.0.0"
+numpy = "^1.0.0"
+scipy = "^1.0"
+scikit-learn = "^1.1"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.0"
+pytest = "^6.0"
+pytest-cov ="^3.0"
+black = "^22.3.0"
+
+[tool.setuptools_scm]
+write_to = "ml_tools/_version.py"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "wheel", "setuptools_scm[toml]>=6.0"]
+build-backend = "poetry.core.masonry.api"
