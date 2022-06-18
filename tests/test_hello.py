@@ -1,4 +1,4 @@
-from ml_tools.hello import hello
+from ml_experiment_tools.hello import hello
 
 
 def test_hello(capfd):

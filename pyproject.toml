@@ -1,5 +1,5 @@
 [project]
-name = "ml_tools"
+name = "ml_experiment_tools"
 description = ""
 readme = "README.md"
 license = {file = "LICENSE.txt"}
