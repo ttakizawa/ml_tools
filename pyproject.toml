@@ -16,7 +16,7 @@ classifiers = [
 dynamic = ["version"]
 
 [tool.poetry]
-name = "ml_tools"
+name = "ml_experiment_tools"
 version = "0.0.1"
 description = ""
 authors = ["Takafumi Takizawa <zawa78@gmail.com>"]
@@ -36,7 +36,7 @@ pytest-cov ="^3.0"
 black = "^22.3.0"
 
 [tool.setuptools_scm]
-write_to = "ml_tools/_version.py"
+write_to = "ml_experiment_tools/_version.py"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "wheel", "setuptools_scm[toml]>=6.0"]
