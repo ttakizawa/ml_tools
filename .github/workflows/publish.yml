@@ -1,8 +1,7 @@
 name: Python package
 on:
-  push:
-    tags:
-      - "v*.*.*"
+  release:
+    types: [created]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,3 +14,4 @@ jobs:
           extra_build_dependency_packages: "liblapack-dev gfortran"
           repository_name: "testpypi"
           repository_url: "https://test.pypi.org/legacy/"
+          plugins: "poetry-dynamic-versioning-plugin"
