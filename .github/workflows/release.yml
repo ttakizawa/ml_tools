@@ -18,3 +18,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         RELEASE_BRANCHES: release.*,feature.*,fix.*,hotfix.*,main
+        INITIAL_VERSION: 0.1.0

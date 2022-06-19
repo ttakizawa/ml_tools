@@ -1,5 +1,5 @@
 [project]
-name = "ml_tools"
+name = "ml_experiment_tools"
 description = ""
 readme = "README.md"
 license = {file = "LICENSE.txt"}
@@ -16,11 +16,14 @@ classifiers = [
 dynamic = ["version"]
 
 [tool.poetry]
-name = "ml_tools"
-version = "0.0.1"
-description = ""
+name = "ml_experiment_tools"
+version = "0.0.0" # using poetry-dynamic-versioning
+description = "accerarate your ml experiment"
 authors = ["Takafumi Takizawa <zawa78@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/vaaaaanquish/module_nam"
+repository = "https://github.com/vaaaaanquish/module_nam"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -29,14 +32,24 @@ numpy = "^1.0.0"
 scipy = "^1.0"
 scikit-learn = "^1.1"
 
+[tool.poetry-dynamic-versioning]
+enable = true
+style = "pep440"
+
 [tool.poetry.dev-dependencies]
-flake8 = "^3.0"
+pyproject-flake8 = "^0.0.1-alpha.2"
 pytest = "^6.0"
 pytest-cov ="^3.0"
 black = "^22.3.0"
 
+[tool.flake8]
+max-line-length = 120
+max-complexity = 18
+ignore = "E203,E266,W503,D203,"
+exclude = ".git,.github,__pycache__,.vscode,venv,env,tests"
+
 [tool.setuptools_scm]
-write_to = "ml_tools/_version.py"
+write_to = "ml_experiment_tools/_version.py"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "wheel", "setuptools_scm[toml]>=6.0"]
