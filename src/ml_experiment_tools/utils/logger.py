@@ -1,7 +1,7 @@
 from logging import getLogger, StreamHandler, Formatter, INFO
 
 
-def get_logger(name: str=None, level=INFO):
+def get_logger(name: str = None, level=INFO):
     log_format = "%(asctime)s %(filename)s %(funcName)s "  \
                  "[%(levelname)s] %(message)s"
 
