@@ -1,5 +1,5 @@
 from .reduce_mem_usage import reduce_mem_usage
 
-__all__  = [
+__all__ = [
     reduce_mem_usage,
 ]

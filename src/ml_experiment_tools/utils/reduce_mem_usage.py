@@ -4,7 +4,7 @@ import pandas as pd
 
 def reduce_mem_usage(df: pd.DataFrame, verbose=True) -> pd.DataFrame:
     numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
-    start_mem = df.memory_usage().sum() / 1024**2 
+    start_mem = df.memory_usage().sum() / 1024**2
     dfs = []
     for col in df.columns:
         col_type = df[col].dtypes
@@ -19,7 +19,7 @@ def reduce_mem_usage(df: pd.DataFrame, verbose=True) -> pd.DataFrame:
                 elif c_min > np.iinfo(np.int32).min and c_max < np.iinfo(np.int32).max:
                     dfs.append(df[col].astype(np.int32))
                 elif c_min > np.iinfo(np.int64).min and c_max < np.iinfo(np.int64).max:
-                    dfs.append(df[col].astype(np.int64) ) 
+                    dfs.append(df[col].astype(np.int64))
             else:
                 if c_min > np.finfo(np.float16).min and c_max < np.finfo(np.float16).max:
                     dfs.append(df[col].astype(np.float16))
@@ -29,7 +29,7 @@ def reduce_mem_usage(df: pd.DataFrame, verbose=True) -> pd.DataFrame:
                     dfs.append(df[col].astype(np.float64))
         else:
             dfs.append(df[col])
-    
+
     df_out = pd.concat(dfs, axis=1)
     if verbose:
         end_mem = df_out.memory_usage().sum() / 1024**2
