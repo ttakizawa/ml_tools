@@ -26,6 +26,7 @@ homepage = "https://github.com/vaaaaanquish/module_nam"
 repository = "https://github.com/vaaaaanquish/module_nam"
 
 [tool.poetry.dependencies]
+Cython = "^0.29.22"
 python = "^3.8"
 pandas = "^1.0.0"
 numpy = "^1.22.0"
