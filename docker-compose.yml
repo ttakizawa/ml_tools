@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ml_tools:
+    platform: linux/x86_64
+    build:
+      context: .
+    working_dir: /usr/src/
+    volumes:
+      - ./:/usr/src
+    tty: true
+    entrypoint: "sh"

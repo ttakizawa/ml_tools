@@ -45,7 +45,7 @@ black = "^22.3.0"
 [tool.flake8]
 max-line-length = 120
 max-complexity = 18
-ignore = "E203,E266,W503,D203,"
+ignore = "E203,E266,W503,D203,E721"
 exclude = ".git,.github,__pycache__,.vscode,venv,env,tests"
 
 [tool.setuptools_scm]

@@ -1,13 +1,14 @@
 build:
-	docker build -t ml_tools .
+	docker-compose build
 
 test-code:
-	docker run -ti --rm -v $(pwd):/usr/src -w /usr/src ml_tools pytest
+	docker-compose run --rm --entrypoint pytest ml_tools
 
 flake8:
-	docker run -ti --rm -v $(pwd):/usr/src -w /usr/src ml_tools poetry run pflake8
+	docker-compose run --rm --entrypoint "poetry run pflake8" ml_tools
 
 check:
-	make build
-	make test-code
-	make flake8
+	docker-compose run --rm --entrypoint check.sh ml_tools
+
+login:
+	docker-compose run -ti --rm ml_tools /bin/bash
