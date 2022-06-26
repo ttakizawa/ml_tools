@@ -1,4 +1,4 @@
 # /bin/sh
 pip install -e .
-pytest
+pytest -s
 poetry run pflake8

@@ -46,7 +46,7 @@ black = "^22.3.0"
 max-line-length = 120
 max-complexity = 18
 ignore = "E203,E266,W503,D203,E721"
-exclude = ".git,.github,__pycache__,.vscode,venv,env,tests"
+exclude = ".git,.github,__pycache__,.vscode,.venv,env,tests"
 
 [tool.setuptools_scm]
 write_to = "ml_experiment_tools/_version.py"

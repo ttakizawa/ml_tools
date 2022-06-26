@@ -8,7 +8,7 @@ flake8:
 	docker-compose run --rm --entrypoint "poetry run pflake8" ml_tools
 
 check:
-	docker-compose run --rm --entrypoint check.sh ml_tools
+	docker-compose run --rm --entrypoint "sh check.sh" ml_tools
 
 login:
 	docker-compose run -ti --rm ml_tools /bin/bash
