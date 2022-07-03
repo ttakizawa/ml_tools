@@ -12,4 +12,4 @@ def test_onehot_encoder():
     result = encoder.fit_transform(df)
 
     assert len(result) == len(df)
-    assert len(result.columns) == 4
+    assert len(result.columns) == 3

@@ -11,8 +11,9 @@ logger = get_logger(__name__)
 
 
 class OneHotEncoder:
-    def __init__(self, column, drop=None, handle_unknown='error'):
+    def __init__(self, column, drop='first', handle_unknown='error'):
         self.column = column
+        self.drop = drop
         self.le = sk_LabelEncoder()
         self.ohe = sk_OneHotEncoder(drop=drop, handle_unknown=handle_unknown)
 
@@ -29,9 +30,12 @@ class OneHotEncoder:
     def transform(self, df):
         labels = self.le.transform(df[self.column])
         encoded = self.ohe.transform(labels.reshape(-1, 1)).astype(int)
+        if self.drop == "first":
+            names = [(self.column + "_") + str(s) for s in self.le.classes_[1:]]
+        else:
+            names = [(self.column + "_") + str(s) for s in self.le.classes_]
 
-        names = [(self.column + "_") + str(s) for s in self.le.classes_]
-
+        self.names = names
         one_hot_df = pd.DataFrame(
             index=df.index,
             columns=names,
